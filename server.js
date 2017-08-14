@@ -19,7 +19,7 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 //Routing
-var PORT = 3000;
+var port = process.env.PORT || 3000;
 
 // require('./app/routing/apiRoutes.js'); 
 // require('./app/routing/htmlRoutes.js');
