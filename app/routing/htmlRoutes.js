@@ -1,12 +1,14 @@
 //Dependencies
-var path = require("path")
+var path = require("path");
+
 
 module.exports = function(app){
 	app.get("/survey", function (request, response) {
-		response.sendFile(path.join(__dirname, "/../../app/public/survey.html"));
+		response.sendFile(path.join(__dirname, "../public/survey.html"));
 	});
 
-	app.use("/", function(request, response){
-		response.sendFile(path.join(__dirname, "/../../app/public/home.html"));
+	app.get("/", function(request, response){
+		console.log("This is the path:", path.join(__dirname, "../public/survey.html"));
+		response.sendFile(path.join(__dirname, "../public/home.html"));
 	});
 }
